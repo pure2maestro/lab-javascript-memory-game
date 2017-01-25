@@ -101,7 +101,7 @@ function MemoryGame (){
 
   // creating a new game...
   unShowAll();
-  
+
   // lets fill the play grid
   var seen = [], i = 0, j = 0;
   for (i = 0; i < this.cards.length; ++i){
@@ -152,6 +152,8 @@ var unShowBoth = function (){
 
 var unShowAll = function(){
   $('.pic').attr('src', '');
+  $('#click-count').text('0');
+  $('#match-count').text('0');
 };
 
 var updateClickCount = function (clicks){
@@ -180,7 +182,7 @@ $(document).ready(function(){
 
     myGame.play(cssIDInt);
     if (myGame.isWin()){
-      alert("YOU WIN!!!");
+      alert("YOU WIN!!! clicks: " + $('#click-count').text() );
       myGame = null;
     }
 
